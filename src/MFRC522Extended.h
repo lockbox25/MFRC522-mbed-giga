@@ -7,7 +7,7 @@
 #define MFRC522Extended_h
 
 #include <Arduino.h>
-#include "MFRC522.h"
+#include "MFRC522-mbed-giga.h"
 
 class MFRC522Extended : public MFRC522 {
 		
@@ -78,8 +78,11 @@ public:
 	// Contructors
 	/////////////////////////////////////////////////////////////////////////////////////
 	MFRC522Extended() : MFRC522() {};
+	MFRC522Extended(SPIClass* spi = &SPI) : MFRC522(spi) {};
 	MFRC522Extended(uint8_t rst) : MFRC522(rst) {};
+	MFRC522Extended(uint8_t rst, SPIClass* spi = &SPI) : MFRC522(rst, spi) {};
 	MFRC522Extended(uint8_t ss, uint8_t rst) : MFRC522(ss, rst) {};
+	MFRC522Extended(uint8_t ss, uint8_t rst, SPIClass* spi = &SPI) : MFRC522(ss, rst, spi) {};
 	
 	/////////////////////////////////////////////////////////////////////////////////////
 	// Functions for communicating with PICCs
