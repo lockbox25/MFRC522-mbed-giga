@@ -77,6 +77,7 @@ const byte FM17522_firmware_reference[] PROGMEM = {
 
 class MFRC522 {
 public:
+	SPIClass* _spi;
 	// Size of the MFRC522 FIFO
 	static constexpr byte FIFO_SIZE = 64;		// The FIFO is 64 bytes.
 	// Default value for unused pin
@@ -270,8 +271,11 @@ public:
 	// Functions for setting up the Arduino
 	/////////////////////////////////////////////////////////////////////////////////////
 	MFRC522();
+	MFRC522(SPIClass* spi = &SPI);
 	MFRC522(byte resetPowerDownPin);
+	MFRC522(byte resetPowerDownPin, SPIClass* spi = &SPI);
 	MFRC522(byte chipSelectPin, byte resetPowerDownPin);
+	MFRC522(byte chipSelectPin, byte resetPowerDownPin, SPIClass* spi = &SPI);
 	
 	/////////////////////////////////////////////////////////////////////////////////////
 	// Basic interface functions for communicating with the MFRC522
