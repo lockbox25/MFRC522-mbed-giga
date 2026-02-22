@@ -7,8 +7,8 @@
  * 
  * Please read this file for an overview and then MFRC522.cpp for comments on the specific functions.
  */
-#ifndef MFRC522_h
-#define MFRC522_h
+#ifndef MFRC522_MBED_GIGA_H
+#define MFRC522_MBED_GIGA_H
 
 #include "require_cpp11.h"
 #include "deprecated.h"
