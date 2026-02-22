@@ -35,7 +35,7 @@ MFRC522::StatusCode MFRC522Extended::PICC_Select(	Uid *uid,			///< Pointer to Ui
 	bool selectDone;
 	bool useCascadeTag;
 	byte cascadeLevel = 1;
-	::StatusCode result;
+	StatusCode result;
 	byte count;
 	byte index;
 	byte uidIndex;					// The first index in uid->uidByte[] that is used in the current Cascade Level.
