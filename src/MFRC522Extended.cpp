@@ -28,7 +28,7 @@
  * 
  * @return STATUS_OK on success, STATUS_??? otherwise.
  */
-::StatusCode Extended::PICC_Select(	Uid *uid,			///< Pointer to Uid struct. Normally output, but can also be used to supply a known UID.
+MFRC522::StatusCode Extended::PICC_Select(	Uid *uid,			///< Pointer to Uid struct. Normally output, but can also be used to supply a known UID.
 											byte validBits		///< The number of known UID bits supplied in *uid. Normally 0. If set you must also supply uid->size.
 										 ) {
 	bool uidComplete;
